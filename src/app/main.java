@@ -17,14 +17,14 @@ public class main {
 		String letras[]=obj.letras;//las letras posibles
 		String num[]=obj.num;//los numeros posibles
 		String newKey;
-		String message;
+		String message=null;
 	
 		int cont=0;
 		boolean create=true;
-		
+		float porcentaje=(float) 0.6;
 		while(create) {
 			
-			if(cont==(260*0.4)) {
+			if(cont==260*porcentaje) {
 				break;
 			}
 			else {
@@ -48,11 +48,16 @@ public class main {
 //				System.out.println(newKey);
 				message=obj.decrypt(newKey);
 				if(message!=null) {
-					System.out.println(newKey);
-					System.out.println(message);
-					
+					System.out.println("Key desifrada: "+newKey);
+					System.out.println("Mensaje cifrado: "+message);
+					System.out.println("Con un porcentaje de "+porcentaje+"% de probabilidad, se logra desifrar la llave.");
+					break;
 				}
+				
 			}
+		if(message==null) {
+			System.out.println("Con un porcentaje de "+porcentaje+"% de probabilidad, no se logra desifrar la llave.");
+		}
 		
-
-}
+	}
+};
