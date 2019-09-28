@@ -1,6 +1,7 @@
 package app;
 import java.math.*;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 import app.AES;
@@ -18,10 +19,19 @@ public class main {
 		String num[]=obj.num;//los numeros posibles
 		String newKey;
 		String message=null;
+		String entradaTeclado="";
 	
 		int cont=0;
 		boolean create=true;
-		float porcentaje=(float) 0.6;
+		
+		System.out.println ("Por favor introduzca el porcentaje de revisión (Ingresar dato 0.%, ejemplo: 0.6): ");
+		Scanner entradaEscaner = new Scanner (System.in); //Creación de un objeto Scanner
+
+        entradaTeclado = entradaEscaner.nextLine (); //Invocamos un método sobre un objeto Scanner
+		
+        float porcentaje = Float.parseFloat(entradaTeclado);
+
+		System.out.println(porcentaje);
 		while(create) {
 			
 			if(cont==260*porcentaje) {
